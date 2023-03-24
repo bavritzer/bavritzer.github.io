@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+      <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+      <meta http-equiv="Content-Type" content="text/html; charset=Utf-8">
+    <script type="text/javascript" src="qrcode.js"></script>
+    <script type="text/javascript" src="gen.js"></script>
+    <script type="text/javascript" src="download.js"></script>
+    </head>
+
+  <body>
+    <h1>QR Code Generator</h1>
+    <label for="text-input">Text to encode:</label>
+    <input type="text" name="text_to_encode" id="text-input">
+    <button type="submit" name="generate_btn" value="Generate" onclick="update_qrcode()">Generate</button>
+    <div id="qr"></div>
+    <script type="text/javascript" src="qrcode.js">
+    </script>
+   
+    <!-- <py-script>
+      import qrcode
+      import qrcode.image.svg
+      from pyscript import Element
+      def gen_qr(*args, **kwargs):
+        URL=Element('text-input').element.value
+        factory = qrcode.image.svg.SvgPathImage
+        img = qrcode.make(URL, image_factory=factory)
+        img
+    </py-script> -->
+    <div id="qr"></div>
+      <button onclick="downloadSVG()" id = "downloader" style.display = 'none'>Download SVG</button>
+    
+  </body>
+</html>
