@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <style>
+        /* Set the initial visibility of the button to hidden */
+        #downloader {
+          display: none;
+        }
+      </style>
       <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
       <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
       <meta http-equiv="Content-Type" content="text/html; charset=Utf-8">
@@ -29,10 +35,10 @@
         img
     </py-script> -->
     <div id="qr"></div>
-      <button onclick="downloadSVG()" id = "downloader" style.display = 'none'>Download SVG</button>
+      <button onclick="downloadSVG()" id = "downloader">Download SVG</button>
     
   </body>
-  <p>
-    Based on code written by Kazuhiko Arase. <a href= "https://github.com/kazuhikoarase/qrcode-generator/blob/master/js/README.md"></a>The word 'QR Code' is registered trademark of DENSO WAVE INCORPORATED.
-  </p>
+  <br>
+  <br>
+    Based on code written by <a href= "https://github.com/kazuhikoarase/qrcode-generator/blob/master/js/README.md">Kazuhiko Arase</a>. The word 'QR Code' is registered trademark of DENSO WAVE INCORPORATED.
 </html>
