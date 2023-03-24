@@ -10,7 +10,7 @@
     </head>
 
   <body>
-    <h1>QR Code Generator</h1>
+    <h1>QR Generator</h1>
     <label for="text-input">Text to encode:</label>
     <input type="text" name="text_to_encode" id="text-input">
     <button type="submit" name="generate_btn" value="Generate" onclick="update_qrcode()">Generate</button>
@@ -32,4 +32,7 @@
       <button onclick="downloadSVG()" id = "downloader" style.display = 'none'>Download SVG</button>
     
   </body>
+  <p>
+    Based on code written by Kazuhiko Arase. <a href= "https://github.com/kazuhikoarase/qrcode-generator/blob/master/js/README.md"></a>The word 'QR Code' is registered trademark of DENSO WAVE INCORPORATED.
+  </p>
 </html>
