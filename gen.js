@@ -1,4 +1,6 @@
-var downloadable = "";
+var downloadable;
+var downloadableP;
+var qsvg; 
 var body_loadHander = function() {
 
   var crtOpt = function(value, label) {
@@ -53,12 +55,30 @@ var errorCorrectionLevel = 'M';
 var qr = qrcode(typeNumber, errorCorrectionLevel);
 qr.addData(document.getElementById("text-input").value);
 qr.make();
-document.getElementById('qr').innerHTML = qr.createImgTag();
-downloadable=qr.createDataURL()
+qsvg = qr.createSvgTag(cellSize=5, scalable=true);
+console.log(qsvg);
+document.getElementById('qr').innerHTML = qsvg;
+downloadableP=qr.createDataURL();
 var x = document.getElementById("downloader");
+x.style.display = "block";
+var x = document.getElementById("downloaderP");
 x.style.display = "block";
 };
 function downloadSVG() {
+  // var svg = document.getElementById("qr").innerHTML; // Get the SVG data from the "qr" div
+  // svg = svg.replace(/xmlns="[^"]+"/g, ''); // Remove the namespace declaration
+  var blob = new Blob([qsvg], { type: "image/gif+xml" }); // Create a Blob from the SVG data
+  var url = URL.createObjectURL(blob); // Create a download URL for the Blob
+
+  // Create a link to the download URL and click it to trigger the download
+  var link = document.createElement("a");
+  link.setAttribute("href", url);
+  link.setAttribute("download", "qrcode.svg");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+function downloadPNG() {
   // var svg = document.getElementById("qr").innerHTML; // Get the SVG data from the "qr" div
   // svg = svg.replace(/xmlns="[^"]+"/g, ''); // Remove the namespace declaration
   // var blob = new Blob([svg], { type: "image/gif+xml" }); // Create a Blob from the SVG data
@@ -66,8 +86,8 @@ function downloadSVG() {
 
   // Create a link to the download URL and click it to trigger the download
   var link = document.createElement("a");
-  link.setAttribute("href", downloadable);
-  link.setAttribute("download", "qrcode.gif");
+  link.setAttribute("href", downloadableP);
+  link.setAttribute("download", "qrcode.png");
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
