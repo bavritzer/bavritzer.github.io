@@ -29,7 +29,7 @@ var create_qrcode = function(text, typeNumber,
 
   qrcode.stringToBytes = qrcode.stringToBytesFuncs[mb];
 
-  var qr = qrcode(typeNumber || 4, errorCorrectionLevel || 'M');
+  var qr = qrcode(typeNumber || 4, errorCorrectionLevel || 'H');
   qr.addData(text, mode);
   qr.make();
 
