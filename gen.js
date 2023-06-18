@@ -50,12 +50,12 @@ var update_qrcode = function() {
 //     create_qrcode(text, '', 'H(30%)', 'Alphanumeric', 'default');
 
 
-    var typeNumber = 10;
-var errorCorrectionLevel = 'M';
+    var typeNumber = 0;
+var errorCorrectionLevel = 'H';
 var qr = qrcode(typeNumber, errorCorrectionLevel);
 qr.addData(document.getElementById("text-input").value);
 qr.make();
-qsvg = qr.createSvgTag(cellSize=5, scalable=true);
+qsvg = qr.createSvgTag(cellSize=2.5, scalable=true);
 console.log(qsvg);
 document.getElementById('qr').innerHTML = qsvg;
 downloadableP=qr.createDataURL();
