@@ -1,0 +1,3 @@
+T=.32 - one squeezing gate (th and norm)
+T=.52 - two squeezing gates (th and norm1, th and norm2)
+T=.31 - three squeezing gates
